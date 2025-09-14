@@ -2,8 +2,14 @@ from typing import Annotated
 from enum import Enum
 from fastapi import FastAPI,Path,Query
 from pydantic import BaseModel,Field
+from database import Base,engine
+from models import Book
+
 
 app = FastAPI(title="NT-Kutubxon")
+
+Base.metadata.create_all(engine)
+
 
 @app.get("/api/books/{book_id}")
 def get_book_detail(
