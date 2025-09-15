@@ -16,7 +16,7 @@ class Genre(str,enum.Enum):
     drama = "drama"
 
 class Book(Base):
-    __tablename__ = 'books'
+    __tablename__ = "books"
 
     book_id = Column('id',Integer,primary_key=True,nullable=False)
     title = Column(String(length=30),nullable=False)
